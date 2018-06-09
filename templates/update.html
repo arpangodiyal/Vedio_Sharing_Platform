@@ -1,0 +1,15 @@
+<!DOCTYPE Html>
+
+<html>
+	<head>
+		<title> Update </title>
+	</head>
+	<body>
+		<h1>Add Student</h1>
+		<form method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" value="Update">
+		</form>
+	</body>
+</html>

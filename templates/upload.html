@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE Html>
+
+<html>
+	<head>
+		<title>Upload</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'bs/css/bootstrap.min.css' %}">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 col-xs-offset-10">
+					<a href="/logout"><h4 class="text-danger">Logout</h4></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-4">
+					<h2 class="text-info">Share what you've got</h2>
+					<br /><br />
+					<form method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						{{form.as_p}} <br /><br />
+						<button type="submit" class="btn btn-danger">Upload</button>
+					</form>
+				</div>
+	</body>
+</html>

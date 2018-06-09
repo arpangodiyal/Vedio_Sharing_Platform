@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE Html>
+
+<html>
+	<head>
+		<title> Login </title>
+		<link rel="stylesheet" type="text/css" href="{% static 'bs/css/bootstrap.min.css' %}">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3 col-xs-offset-9">
+					<a href="/accounts/register"><span class="primary"><h4>Register Here</h4></span></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 col-xs-offset-4">
+					<form method="post" class="form-signin">
+						{% csrf_token %}
+						<h2 class="form-signin-heading">Sign In</h2><br/><br />
+						{% for field in form %}
+							<label class="control-label">{{field.label}}</label>
+							<div class="controls">{{field}}</div><br />
+							<br />
+						{% endfor %}
+						<button class="btn btn-primary btn-block" type="submit">Login</button>
+					</form>
+				</div>
+			</div><br />
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-4">
+					{% if messages %}
+						{% for message in messages %}
+							<ul class="messages">
+								<li>{{message}}</li>
+							</ul>
+						{% endfor %}
+					{% endif %}
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>

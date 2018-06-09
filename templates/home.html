@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'bs/css/bootstrap.min.css' %}">
+		<script type="text/javascript" src="{% static 'bs/js/bootstrap.min.js' %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<title>Watch</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 col-xs-offset-8">
+					<h4 class="text-success">Welcome {{username}}</h4>
+				</div>
+				<div class="col-xs-2">
+					<a href="/logout"><h4 class="text-danger">Logout</h4></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-4">
+					<div class="page-header">
+						<h2>Watch and Upload your Vedios</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<img src="{% static 'img/pic1.png' %}" class="img-responsive">
+				</div>	
+			</div>
+       			<br /><br />
+			<div class="row">
+				<div class="col-xs-2 col-xs-offset-4">
+					<a href="/accounts/watch"><button class="btn btn-success btn-lg">Watch</button></a>
+				</div>
+				<div class="col-xs-2">
+					<a href="/accounts/upload"><button class="btn btn-danger btn-lg">Upload</button></a>
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>
